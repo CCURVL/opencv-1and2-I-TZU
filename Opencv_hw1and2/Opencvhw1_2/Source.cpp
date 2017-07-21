@@ -74,9 +74,13 @@ int HW02_ReadAndShowData(int numberOfImgs) {
 		imshow("three", ImgBinarys);
 		moveWindow("three", 700, 20);
 
-		char key = (char)cv::waitKey(0);
-		if (key == 13)
-			destroyAllWindows();
+		while (true) {
+			char key = (char)cv::waitKey(0);
+			if (key == 13) {
+				destroyAllWindows();
+				break;
+			}
+		}
 	} 
 
 	return 0;
